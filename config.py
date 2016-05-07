@@ -1,2 +1,2 @@
-WTF_CSRF_ENABLED = True # activates the cross-site request forgery preventation
+WTF_CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'

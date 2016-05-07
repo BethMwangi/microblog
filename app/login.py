@@ -1,18 +1,15 @@
-from app import app
+<!-- extend from base layout -->
+{% extends "base.html" %}
 
-@app.route(' / ')
-@app.route('/index')
-def index():
-    user = {'nickname':'Blososom'} # the user input
-    return '''
-   
-<html>
-  <head>
-     <title>Home Page</title>
-  </head>
-  <body>
-     <h1> Hello, ''' + user['nickname'] + '''</h1>
-  </body>
-</html>
-'''  
-
+{% block content %}
+  <h1>Sign In</h1>
+  <form action="" method="post" name="login">
+      {{ form.hidden_tag() }}
+      <p>
+          Please enter your OpenID:<br>
+          {{ form.openid(size=80) }}<br>
+      </p>
+      <p>{{ form.remember_me }} Remember Me</p>
+      <p><input type="submit" value="Sign In"></p>
+  </form>
+{% endblock %}
